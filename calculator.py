@@ -4,11 +4,12 @@ Using the arithmetic.py file from Calculator Part 1, create the
 calculator program yourself in this file.
 """
 
+
 from arithmetic import *
 
 
 def get_user_input():
-    user_input = input()
+    user_input = input("> ")
     user_input = user_input.split()
     return user_input
 
@@ -25,22 +26,30 @@ def calculate(user_input):
         num2 = user_input[2]
 
     if which_operation == "+":
-        add(num1, num2)
+        print(add(num1, num2))
     elif which_operation == "-":
-        subtract(num1, num2)
+        print(subtract(num1, num2))
     elif which_operation == "*":
-        multiply(num1, num2)
+        print(multiply(num1, num2))
     elif which_operation == "/":
-        divide(num1, num2)
+        print(divide(num1, num2))
     elif which_operation == "square":
-        square(num1)
+        print(square(num1))
     elif which_operation == "cube":
-        cube(num1)
+        print(cube(num1))
     elif which_operation == "pow":
-        power(num1, num2)
+        print(power(num1, num2))
     elif which_operation == "mod":
-        mod(num1, num2)
+        print(mod(num1, num2))
     elif which_operation == "q":
         return
 
+def run_calculator():
+    user_input = get_user_input()
+    user_input = make_float(user_input)
+    result = calculate(user_input)
+    print(result)
+
 #print(get_user_input())
+
+print(run_calculator())
